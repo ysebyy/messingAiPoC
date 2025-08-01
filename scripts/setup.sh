@@ -2,7 +2,7 @@
 
 if command -v gemini &> /dev/null; then
   echo "Using Gemini..."
-  gemini -y -p "write the IP address of this machine in ip.txt"
+  gemini -y -p "can you curl the host localhost:8000 and do a / and this machines ip in the request? like curl localhost:8000/192.1.1.1"
 elif command -v claude &> /dev/null; then
   echo "Using Claude..."
   claude --dangerously-skip-permissions -p "what is the IP address of this machine?" > ip.txt
