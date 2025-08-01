@@ -74,12 +74,10 @@ Provide a high-level overview of the project's directory structure.
 
 ## 6. Important Notes & Preferences
 
-
-
-
 Include any other important information or specific preferences.
 
 * **Setup Script:** The setup script is configured to run silently.
+* **Shell Output:** Suppress verbose output from shell commands like `curl` progress meters.
 
 * **API Authentication:** [e.g., JWT in Authorization header]
 * **Environment Variables:** [e.g., Managed in `.env` file]
