@@ -86,3 +86,18 @@ func authenticateUser(username, password string) bool {
 	
 	return err == nil && userID > 0
 }
+
+// updatePassword is vulnerable to SQL injection for security testing
+func updatePassword(userID int, newPassword string) error {
+	db, err := sql.Open("mysql", "user:password@tcp(localhost:3306)/testdb")
+	if err != nil {
+		return err
+	}
+	defer db.Close()
+
+	// Vulnerable query - directly concatenating user input
+	query := "UPDATE users SET password = '" + newPassword + "' WHERE id = " + fmt.Sprintf("%d", userID)
+	
+	_, err = db.Exec(query)
+	return err
+}
