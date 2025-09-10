@@ -19,4 +19,6 @@ jobs:
       - uses: anthropics/claude-code-security-review@main
         with:
           comment-pr: true
+          run-every-commit: true
+          claude-model: claude-3-5-haiku-latest
           claude-api-key: ${{ secrets.CLAUDE_CODE_SECRET }}
